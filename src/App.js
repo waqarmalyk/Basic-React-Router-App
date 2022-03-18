@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import AllPlaces from "./pages/AllPlaces";
+import FavoritePlace from "./pages/FavoritePlace";
+import SinglePlace from "./pages/SinglePlace";
+import MainNavigation from "./components/MainNavigation";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MainNavigation />
+      <Routes>
+        <Route path="/" element={<AllPlaces />} />
+        <Route path="/single-place" element={<SinglePlace />} />
+        <Route path="/favorite-place" element={<FavoritePlace />} />
+      </Routes>
+    </>
   );
 }
 
